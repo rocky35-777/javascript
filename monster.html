@@ -24,6 +24,8 @@
 
             while(monsterHP > 0){
                 monsterHP -= attackDamage
+                // 만약 0보다 작아질 경우, hp에 0을 대입한다! 
+                if (monsterHP < 0) monsterHP = 0;
                 attackCount += 1
 
                 const p = document.createElement("p")
@@ -33,6 +35,8 @@
                 const strong = document.createElement("strong")
                 strong.textContent = `몬스터의 남은 HP는 ${monsterHP}입니다!`
                 container.append(strong)
+
+            
             }
 
             const h2 = document.createElement("h2")
