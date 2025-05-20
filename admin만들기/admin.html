@@ -75,46 +75,56 @@
     <script>
     // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
     // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리를 작성해 볼 수 있음
-    const itemsPerPage = 2;
-    let currentPage = 1;
+    document.addEventListener('DOMContentLoaded', () => {
+        const product_data = [
+            { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
+            { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
+            { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
+            { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000' },
+            { category: "신발", brand: 'Adidas', product: '슈퍼스타', price: '89,000' }
+        ];
+        
+        const itemsPerPage = 2;
+        let currentPage = 1;
+        const table = document.getElementById('product_data_Table');
 
-    function renderTable(page) {
-        product_data_Table.innerHTML = '';
-        const start = (page - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-        const currentData = product_data.slice(start, end);
+        function renderTable(page) {
+            product_data_Table.innerHTML = '';
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const currentData = product_data.slice(start, end);
 
     currentData.forEach(item => {
-    const row = product_data_Table.insertRow();
+        const row = product_data_Table.insertRow();
         row.insertCell(0).innerHTML = item.category;
         row.insertCell(1).innerHTML = item.brand;
         row.insertCell(2).innerHTML = item.product;
         row.insertCell(3).innerHTML = item.price;
-  });
-}
+    });
+    
 
 // 페이지 번호 클릭 시 실행
-document.querySelectorAll('.pagination a.page-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault(); // 기본 이동 막기
-    const urlParams = new URLSearchParams(this.href.split('?')[1]);
-    const page = parseInt(urlParams.get('page'));
-    if (!isNaN(page)) {
-      currentPage = page;
-      renderTable(currentPage);
-    }
-  });
-});
+    document.querySelectorAll('.pagination a.page-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 이동 막기
+        const urlParams = new URLSearchParams(this.href.split('?')[1]);
+        const page = parseInt(urlParams.get('page'));
+        if (!isNaN(page)) {
+        currentPage = page;
+        renderTable(currentPage);
+        }
+    });
+    });
 
-renderTable(currentPage); // 초기 렌더링
+    renderTable(currentPage); // 초기 렌더링
     // 제품 데이터
-    const product_data = [
-        { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
-        { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
-        { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
-        { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000' },
-        // ...
-    ];
+        const product_data = [
+            { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
+            { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
+            { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
+            { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000' },
+            // ...
+        ];
 
     // 제품 테이블에 데이터 추가
     const product_data_Table = document.getElementById('product_data_Table');
