@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Admin Page</title>
+</head>
+<body>
+
+    <div class="container mt-4">
+      <a href="join2.html" class="btn btn-outline-primary float-end">회원가입</a>
+      <h3 class="mb-4">신규 등록 상품</h3>
+      <form class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-auto">
+          <select class="form-select" id="categorySelect" name="category_data_table">
+            <option selected>카테고리</option>
+            <option value="1">상의</option>
+            <option value="2">하의</option>
+            <option value="3">신발</option>
+            <option value="4">패션잡화</option>
+          </select>
+        </div>
+        <div class="col-auto">
+          <input id="productNameInput" class="form-control" placeholder="제품명을 입력해주세요">
+        </div>
+        <div class="col-auto">
+          <button id="searchBtn" class="btn btn-primary" type="submit" disabled>조회</button>
+        </div>
+      </form>
+  
+      <table class="table table-sm mt-4">
+        <thead>
+          <tr>
+            <th>카테고리</th>
+            <th>브랜드</th>
+            <th>상품명</th>
+            <th>가격</th>
+          </tr>
+        </thead>
+        <tbody id="product_data_Table"></tbody>
+      </table>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn btn-outline-secondary" id="prevBtn">◀ 이전</button>
+        <span id="pageIndicator" class="align-self-center">1 / 1</span>
+        <button class="btn btn-outline-secondary" id="nextBtn">다음 ▶</button>
+      </div>
+    </div>
+  
+    <script>
+      const product_data = [
+        { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
+        { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
+        { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000' },
+        { category: "신발", brand: 'Adidas', product: '슈퍼스타', price: '89,000' }
+      ];
+  
+      const tableBody = document.getElementById('product_data_Table');
+  
+      // 모든 데이터 한 번에 렌더링
+      function renderAllProducts() {
+        tableBody.innerHTML = '';
+        product_data.forEach(item => {
+          const row = tableBody.insertRow();
+          row.innerHTML = `
+            <td>${item.category}</td>
+            <td>${item.brand}</td>
+            <td>${item.product}</td>
+            <td>${item.price}</td>
+          `;
+        });
+      }
+  
+      document.getElementById('productNameInput').addEventListener('input', function () {
+        document.getElementById('searchBtn').disabled = this.value.trim() === '';
+      });
+  
+      // 렌더링 시작
+      renderAllProducts();
+    </script>
+  </body>
+</html>  
