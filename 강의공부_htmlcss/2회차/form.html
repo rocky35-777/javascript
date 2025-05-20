@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>설문조사양식</title>
+</head>
+<body>
+    <header>
+    <h1>설문조사 양식</h1>
+    <p>모든 항목에 빠짐없이 체크해주십시오.</p>
+    </header>   
+    <hr>
+
+    <main>
+        <form>
+            <fieldset>
+                <legend>개인정보</legend>
+                    <label for="name">이름</label>
+                    <input type="text"
+                    name="name"
+                    id="name" placeholder="홍길동">
+                    </label> 
+                    <br>
+                    <label for="email">이메일</label>
+                    <input type="email"
+                    name="name"
+                    placeholder="abc@def.com" id="email">
+                    </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>설문</legend> 
+                <br>
+                    <label>
+                    연령대가 어떻게 되십니까?
+                    <br>
+                    <br>
+                        <input type="radio" id="teen" name="age"> 
+                        <label for="teen">10대</label>
+                        <input type="radio" id="twenty" name="age"> 
+                        <label for="twenty">20대</label>
+                        <input type="radio" id="thirty" name="age"> 
+                        <label for="thirty">30대</label>
+                        <input type="radio" id="fourty" name="age"> 
+                        <label for="fourty">40대</label>
+                        <input type="radio" id="fifty" name="age"> 
+                        <label for="fifty">50대</label>
+                        <input type="radio" id="other" name="age"> 
+                        <label for="other">그 외</label>
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        학원을 선택할 때 가장 중요하게 생각하는 것은 무엇입니까? 모두 고르시오. 
+                        <br>
+                        <br>
+                            <input type="checkbox" id="position" name="academy">
+                            <label for="position">위치</label>
+                            <input type="checkbox" id="price" name="academy">
+                            <label for="price">학원비</label>
+                            <input type="checkbox" id="bulding" name="academy">
+                            <label for="bulding">시설</label>
+                            <input type="checkbox" id="teacher" name="academy">
+                            <label for="teacher">강사</label>
+                        </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>기타 의견</legend>
+                    <textarea cols="30" rows="3" name="comment"></textarea>
+            </fieldset>
+        </form>
+    </main>
+    <input type="submit">
+
+    <hr>
+    <footer>
+         <p>공부하느라 수고많았어!</p>
+    </footer>
+</body>
+</html>

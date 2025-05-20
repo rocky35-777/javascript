@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 실습</title>
+  <style>
+    .box {
+      width: 40%;
+      padding: 10px; 
+      border: 3px solid blue;
+      margin: 20px; 
+    }
+
+    /* 2. 제목의 기본 색상은 녹색 */
+    h1 {
+      color: green;  /* 이곳에 기본 제목 색상을 설정하세요 */
+    }
+
+    /* 3. 제목에 클래스 .highlight가 있을 때는 빨간색 */
+    .highlight {
+      color: red;
+      /* 이곳에 클래스 적용 시 제목 색상을 설정하세요 */
+    }
+
+    /* 4. id가 special인 경우 노란색 */
+    #special {
+      color: yellow !important;
+      /* 이곳에 id 적용 시 색상을 설정하세요 */
+    }
+
+    /* 5. 단위를 적절히 사용해 크기 및 글자 크기를 설정하세요 */
+    .content {
+      width: 60%; /* 50%로 박스 크기를 설정 */
+      font-size: 1.5em; /* 글자 크기 설정 */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="highlight">박스 모델 실습</h1>
+  <h1 id="special">우선순위 실습</h1>
+
+  <div class="box content">
+    이곳은 박스 모델이 적용된 콘텐츠입니다.
+  </div>
+</body>
+</html>

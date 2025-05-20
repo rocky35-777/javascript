@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>테두리스타일</title>
+    <style>
+        .area{
+            width: 200px;
+            height: 100px;
+        }
+
+        .red{
+            border-width: 3px;
+            border-style: solid;
+            border-color: red;
+        }
+
+        .green{
+            /*단축속성은 공백으로 공백값을 서로 구분!*/
+            border: 3px solid green;
+
+            border-radius: 10px 20px 30px 40px;
+            /*시계 방향으로 수치 지정 가능*/
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+
+            margin: 10px 20px;
+            padding-top: 20px;
+
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+   <h2>춤 장르</h2>
+   <p>무척 다양한 장르가 존재합니다</p>
+   <p class="red">박스모델을 공부해 봅시다</p>
+   <p class="area green">중심이 가장 중요합니다</p>
+   <div>
+
+   </div>
+</body>
+</html>

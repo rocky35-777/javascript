@@ -1,0 +1,31 @@
+<!-- 14input외입력요소 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>인풋외 입력요소</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>식사 주문</legend>
+            <h2>메인메뉴를 고르세요.</h2>
+        <select multiple size="2">
+            <option value="pasta">파스타</option>
+            <option value="stake">스테이크</option>
+            <option value="fish">생선요리</option>
+            <option value="rice" selected>리조또</option>
+        </select>
+
+        <h2>기타 메뉴를 자유롭게 써주세요</h2>
+        <textarea cols="16" rows="10"></textarea>
+        </fieldset>
+
+        <h2>메뉴 준비중...80%...</h2>
+        <progress max="100" value="80"></progress>
+
+        <h2>호출해주세요</h2>
+        <button>호출</button>
+        <input type="button" value="push">
+    </body>
+</html> 
