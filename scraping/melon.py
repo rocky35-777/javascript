@@ -12,6 +12,7 @@ html = req.text
 soup = BeautifulSoup(html, "html.parser")
 print(soup)
 
+# lst50100 = soup.select(".lst50", ".lst100") 이렇게하면 한번에 할 수 있다.
 lst50 = soup.select(".lst50") #1~50위까지 정보
 lst100 = soup.select(".lst100") #51~100위까지 정보 
 lst_all = lst50 + lst100
